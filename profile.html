@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/specimen/Open+Sans?query=open+sans"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header id="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="header-right">
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="profile">
+            <img src="./person_1 1.svg" />
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <h1 class="sidebar-brand">KB</h1>
+        </div>
+        <div class="close">
+          <i class="fa-solid fa-xmark" onclick="closeSidebar()"></i>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="./dashboard.html">
+              <i class="fa-solid fa-table"></i> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="./articles.html">
+              <i class="fa-solid fa-print"></i> Articles
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#"> <i class="fa-sharp fa-solid fa-users"></i> Users </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="messages.html">
+              <i class="fa-solid fa-message"></i> Querries
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main class="main-container">
+        <div class="profile">
+          <div>
+            <img src="./images.jfif" />
+            <h1>Your profile</h1>
+            <p>This will be displayed on your profile</p>
+            <input type="file" />
+          </div>
+          <form>
+            <h1>Personal information</h1>
+            <div class="one-field">
+              <label>First name</label>
+              <input type="text" />
+            </div>
+            <div class="one-field">
+              <label>Last name</label>
+              <input type="text" />
+            </div>
+            <div class="one-field">
+              <label>Email</label>
+              <input type="email" />
+            </div>
+            <div class="one-field">
+              <label>Password</label>
+              <input type="text" />
+            </div>
+            <button>Save</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="./dashboard.js"></script>
+  </body>
+</html>

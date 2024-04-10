@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/specimen/Open+Sans?query=open+sans"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header id="header">
+        <div class="menu-icon" onclick="openSidebar()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="header-right">
+          <div class="search">
+            <input type="text" placeholder="Search" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="profile">
+            <img src="./person_1 1.svg" />
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </header>
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <a href="./index.html" class="sidebar-brand">KB</a>
+        </div>
+        <div class="close">
+          <i class="fa-solid fa-xmark" onclick="closeSidebar()"></i>
+        </div>
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="./dashboard.html">
+              <i class="fa-solid fa-table"></i> Dashboard
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="./articles.html">
+              <i class="fa-solid fa-print"></i> Articles
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="./users.html">
+              <i class="fa-sharp fa-solid fa-users"></i> Users
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="messages.html">
+              <i class="fa-solid fa-message"></i> Querries
+            </a>
+          </li>
+
+          <li
+            onclick="logout()"
+            style="position: absolute; bottom: 5%"
+            class="sidebar-list-item"
+          >
+            <a href="">
+              <i class="fa-solid fa-right-from-bracket"></i> LOG OUT
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <main class="main-container">
+        <div class="main-title">
+          <h2>DASHBOARD</h2>
+        </div>
+        <div class="main-cards">
+          <div class="card">
+            <i class="fa-regular fa-thumbs-up"></i>
+            <div class="card-inner">
+              <h2>Total likes</h2>
+              <h1 id="total-likes">4,021</h1>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-blog"></i>
+            <div class="card-inner">
+              <h2>Blogs</h2>
+              <h1 id="total-blogs"></h1>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-comments"></i>
+            <div class="card-inner">
+              <h2>Comments</h2>
+              <h1 id="total-comments">12,945</h1>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa-regular fa-message"></i>
+            <div class="card-inner">
+              <h2>Querries</h2>
+              <h1 id="total-queries">945</h1>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa-solid fa-people-group"></i>
+            <div class="card-inner">
+              <h2>Users</h2>
+              <h1 id="total-users">945</h1>
+            </div>
+          </div>
+        </div>
+        <div class="charts">
+          <canvas id="myChart"></canvas>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="./dashboard.js"></script>
+  </body>
+</html>

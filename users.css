@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #70FF00;
+    --secondary: #131313;
+    --third: #363636;
+}
+  .users-list{
+    width: 100%;
+    padding: 10px 25px;
+    margin-top: 10px;
+    height: 80vh;
+    background: var(--secondary);
+    border-radius: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+  }
+  .table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+  }
+  table thead tr{
+    color: #fff;
+    background: #4A4A4A;
+    text-align: left;
+    font-weight: bold;
+    border-radius: 30px;
+  }
+  .table th{
+    padding: 20px 15px;
+    text-align: center;
+  }
+  .table td{
+    padding-bottom: 12px;
+    padding-top: 12px;
+    text-align: center;
+  }
+  .table tbody tr{
+    border-bottom: 1px solid var(--primary);
+    color: white;
+  }
+  .table tbody tr.active{
+    font-weight: bold;
+    color: #4AD489;
+  }
+  .table button{
+    padding: 6px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: white;
+  }
+  .table button i{
+    color: var(--primary);
+  } 
+  .table button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
+  }
+  td img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
