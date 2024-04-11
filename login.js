@@ -20,7 +20,7 @@ document.addEventListener("submit", (e) => {
         console.log(data);
         pop_up.style.display = "flex";
         setTimeout(() => {
-          data.role == "user" ? window.location.href="./index.html" : window.location.href="./dashboard.html" ;
+          data.role == "user" ? window.location.href="./index.html" : window.location.href="dashboard.html" ;
           removepopup();
         }, 2000)
       }
