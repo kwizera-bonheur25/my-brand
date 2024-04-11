@@ -14,7 +14,7 @@ function addsuccess_popup(data){
   function removepopup(){
     pop_up.style.display = "none";
   }
-fetch("http://localhost:4000/api/queries")
+fetch("https://mybrand-be-j0te.onrender.com/api/queries")
 .then(response => response.json())
 .then(response => {
     response.data.map((message) => {
@@ -37,7 +37,7 @@ fetch("http://localhost:4000/api/queries")
 })
 
 function delete_message(id){
-    fetch(`http://localhost:4000/api/queries/${id}`, {
+    fetch(`https://mybrand-be-j0te.onrender.com/api/queries/${id}`, {
     method: 'DELETE'
 })
     .then(response => response.json())

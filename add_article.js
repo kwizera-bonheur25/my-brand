@@ -79,7 +79,7 @@ document.addEventListener("submit", (e) => {
 
   function addsuccess_popup(data){
     console.log(data);
-    document.getElementById("msg").innerHTML = `${data.message}`
+    document.getElementById("msg").innerHTML = "Article added successfully"
     pop_up.style.display = "flex";
     setTimeout(() => {
       removepopup();
@@ -95,7 +95,7 @@ document.addEventListener("submit", (e) => {
   const formData = new FormData(form);
   const token = JSON.parse(localStorage.getItem("loggedUser")).token;
   
-  fetch("http://localhost:4000/api/blogs",{
+  fetch("https://mybrand-be-j0te.onrender.com/api/blogs",{
         method: "POST",
         headers: {
           "Authorization" : `Bearer ${token}`

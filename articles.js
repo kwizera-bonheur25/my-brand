@@ -5,7 +5,7 @@ addloader();
 function removeLeader(){
   document.getElementById("loader-page").style.display = "none";
 }
-fetch("http://localhost:4000/api/blogs")
+fetch("https://mybrand-be-j0te.onrender.com/api/blogs")
 .then (response => response.json())
 .then(response => {
   removeLeader();
@@ -44,7 +44,7 @@ fetch("http://localhost:4000/api/blogs")
 function deleteBlog(id){
   addloader();
   const token = JSON.parse(localStorage.getItem("loggedUser")).token;
-  fetch(`http://localhost:4000/api/blogs/${id}`,{
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}`,{
     method: "DELETE",
     headers:{
       "Authorization" : `Bearer ${token}`,
@@ -97,7 +97,7 @@ function updateBlog(id){
 
   blogId = id;
   document.getElementById("blog-form").style.display = "grid";
-  fetch(`http://localhost:4000/api/blogs/${id}`)
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}`)
   .then(response => response.json())
   .then(response => {
     var imgView = document.querySelector("#img-view img");
@@ -147,7 +147,7 @@ form.addEventListener("submit",(e) => {
   const content = CKEDITOR.instances.content.getData()
   formData.append('content', content);
 
-  fetch(`http://localhost:4000/api/blogs/${blogId}`,{
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${blogId}`,{
         method: "PATCH",
         headers: {
           "Authorization" : `Bearer ${token}`

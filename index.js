@@ -4,7 +4,7 @@ function AllBlogs() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/blogs")
+    fetch("https://mybrand-be-j0te.onrender.com/api/blogs")
       .then((response) => response.json())
       .then((response) => {
         setBlogs(response.data);
@@ -72,9 +72,7 @@ function AllBlogs() {
                   <img key={index} src={blog.image} alt={`Image ${index}`} />
                 </a>
                 <h2 class="title">{blog.title.substring(0, 50) + " ...."}</h2>
-                <div class="description">
-                  {blog.content.substring(0, 196) + " ....."}
-                </div>
+                <div class="description"><div dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 196) + " ....."}} /></div>          
                 <div class="footer">
                   <div class="profile">
                     <img src={blog.author.profile} />
@@ -120,7 +118,7 @@ ReactDOM.render(<AllBlogs />, document.getElementById("blog-posts"));
 //   document.getElementById("loader-page").style.display = "none";
 // }
 
-// fetch('http://localhost:4000/api/blogs')
+// fetch('https://mybrand-be-j0te.onrender.com/api/blogs')
 // .then(response => response.json())
 // .then((response) => {
 //   removeLeader()
@@ -251,7 +249,7 @@ function myFunction() {
 //       document.getElementById("send").style.display = "block";
 //     }
 
-//     fetch("http://localhost:4000/api/queries",{
+//     fetch("https://mybrand-be-j0te.onrender.com/api/queries",{
 //       method: "POST",
 //       headers:{
 //         'Content-Type' : 'application/json'

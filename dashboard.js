@@ -23,11 +23,11 @@ let total_likes;
 let total_comments;
 let total_users;
 
- Promise.all([fetch("http://localhost:4000/api/blogs").then(response => response.json())
- ,fetch("http://localhost:4000/api/queries").then(response => response.json()),
- fetch("http://127.0.0.1:4000/api/blogs/likes/likes").then(response => response.json()),
- fetch("http://127.0.0.1:4000/api/blogs/comments/comments").then(response => response.json()),
- fetch("http://localhost:4000/api/users").then(response => response.json())
+ Promise.all([fetch("https://mybrand-be-j0te.onrender.com/api/blogs").then(response => response.json())
+ ,fetch("https://mybrand-be-j0te.onrender.com/api/queries").then(response => response.json()),
+ fetch("https://mybrand-be-j0te.onrender.com/api/blogs/likes/likes").then(response => response.json()),
+ fetch("https://mybrand-be-j0te.onrender.com/api/blogs/comments/comments").then(response => response.json()),
+ fetch("https://mybrand-be-j0te.onrender.com/api/users").then(response => response.json())
 ])
  .then(([blogResponse, queryResponse, likesResponse, commentsResponse, usersResponse]) => {
   total_blogs = blogResponse.data.length

@@ -8,7 +8,7 @@ function SingleBlog() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
 useEffect(() => {
-  fetch(`http://localhost:4000/api/blogs/${id}`)
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}`)
   .then(response => response.json())
   .then(response => {
     setBlog(response.data)
@@ -28,7 +28,7 @@ const token = JSON.parse(loggedUser).token;
 
   const comment = { content:commentContent }
 
-  fetch(`http://localhost:4000/api/blogs/${id}/comments`, {
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}/comments`, {
     method: "POST",
     headers: {
       'Authorization' : `Bearer ${token}`,
@@ -53,7 +53,7 @@ if(!loggedUser){
 }
 
 const token = JSON.parse(loggedUser).token;
-  fetch(`http://localhost:4000/api/blogs/${id}/likes`,{
+  fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}/likes`,{
     method:"POST",
     headers: {
       'Authorization' : `Bearer ${token}`,
@@ -62,7 +62,11 @@ const token = JSON.parse(loggedUser).token;
   })
   .then(response => response.json())
   .then(response => {
-    location.reload();
+    if(response.status == 201){
+      location.reload()
+    } else{
+      window.location.href = "/login.html"
+    }
   })
 }
 
@@ -141,7 +145,7 @@ ReactDOM.render(<SingleBlog/>, document.getElementById("single_blog"))
 // function removeLeader(){
 //   document.getElementById("loader-page").style.display = "none";
 // }
-// fetch(`http://localhost:4000/api/blogs/${id}`)
+// fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}`)
 // .then(response => response.json())
 // .then(response => {
 //   console.log(blog.author.lastname);
@@ -213,7 +217,7 @@ ReactDOM.render(<SingleBlog/>, document.getElementById("single_blog"))
 
 // const token = JSON.parse(loggedUser).token;
 //   addloader();
-//   fetch(`http://localhost:4000/api/blogs/${id}/likes`,{
+//   fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}/likes`,{
 //     method:"POST",
 //     headers: {
 //       'Authorization' : `Bearer ${token}`,
@@ -240,7 +244,7 @@ ReactDOM.render(<SingleBlog/>, document.getElementById("single_blog"))
 
 //   const comment = { content:content }
 
-//   fetch(`http://localhost:4000/api/blogs/${id}/comments`, {
+//   fetch(`https://mybrand-be-j0te.onrender.com/api/blogs/${id}/comments`, {
 //     method: "POST",
 //     headers: {
 //       'Authorization' : `Bearer ${token}`,

@@ -1,5 +1,5 @@
 const table_body = document.getElementById("table-body");
-fetch("http://localhost:4000/api/users")
+fetch("https://mybrand-be-j0te.onrender.com/api/users")
 .then(response => response.json())
 .then(response => {
     console.log(response.data)

@@ -73,7 +73,7 @@ document.addEventListener("submit", (e) => {
 
   addloader();
   
-      fetch("http://localhost:4000/api/users/register", {
+      fetch("https://mybrand-be-j0te.onrender.com/api/users/register", {
         method: "POST",
         body: formData
       })
@@ -84,6 +84,7 @@ document.addEventListener("submit", (e) => {
             hideloader();
           }, 1500)
           addsuccess_popup();
+          
         } else {
           setTimeout(() => {
             error.style.display = "flex";
